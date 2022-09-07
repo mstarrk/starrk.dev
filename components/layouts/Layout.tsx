@@ -5,14 +5,16 @@ import Head from "next/head";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex">
+    <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>starrk.dev</title>
       </Head>
       <Navbar />
-      <div>{children}</div>
-      <Footer />
-    </div>
+      <div className="my-container flex flex-col">
+        <div className="content-container">{children}</div>
+        <Footer />
+      </div>
+    </>
   );
 }

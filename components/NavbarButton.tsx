@@ -6,13 +6,15 @@ export default function NavbarButton({
   onClick,
 }: {
   icon: ReactNode;
-  text: string;
+  text?: string;
   onClick?: MouseEventHandler<HTMLButtonElement>;
 }) {
   return (
     <button className="navbar-icon group" onClick={onClick}>
       {icon}
-      <span className="navbar-tooltip group-hover:scale-100">{text}</span>
+      {text ? (
+        <span className="navbar-tooltip group-hover:scale-100">{text}</span>
+      ) : null}
     </button>
   );
 }

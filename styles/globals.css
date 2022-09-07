@@ -30,6 +30,9 @@ body::-webkit-scrollbar-thumb {
 
 /* NavbarIcon */
 @layer components {
+  .content-container {
+    @apply flex justify-center items-center flex-col min-h-screen max-h-fit;
+  }
   .navbar-icon {
     @apply relative flex items-center justify-center rounded-xl h-12 w-12 mt-2 mb-2 mx-auto bg-gray-800 text-green-400 hover:bg-green-400 hover:text-white;
   }

@@ -1,3 +1,3 @@
 export default function Posts() {
-  return <h1>All posts</h1>;
+  return <h1>Blog</h1>;
 }
