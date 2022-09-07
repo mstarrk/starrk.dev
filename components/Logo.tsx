@@ -5,7 +5,9 @@ export default function Logo() {
   const img = "/images/logo.png";
 
   return (
-    <Link href={"/"}>
+    // TODO: Link not working
+    // TODO: Change 'p' for a different el
+    <Link href={"www.google.com"}>
       <span>
         <Image
           id="logo"

@@ -4,13 +4,30 @@ import ToggleTheme from "./ToggleTheme";
 
 export default function Navbar() {
   return (
-    <ul id="navbar">
+    // TODO: Styling ul and li (hover too)
+    // TODO: Link and ToggleTheme goes to the right =>
+    // TODO: Parent element for Link and ToggleTheme
+    // TODO: Link and Toggletheme icons
+    // TODO: Styling logo
+    // ? [Logo] <=> [Navbar] <=> [ToggleTheme, Github]
+    <div>
       <Logo />
-      <Link href="/">Home</Link>
-      <Link href="/works">Works</Link>
-      <Link href="/posts">Blog</Link>
-      <Link href="/about">About</Link>
+      <ul id="navbar">
+        <li>
+          <Link href="/">Home</Link>
+        </li>
+        <li>
+          <Link href="/works">Works</Link>
+        </li>
+        <li>
+          <Link href="/posts">Blog</Link>
+        </li>
+        <li>
+          <Link href="/about">About</Link>
+        </li>
+      </ul>
+      <Link href="https://github.com/mstarrk">Github</Link>
       <ToggleTheme />
-    </ul>
+    </div>
   );
 }
