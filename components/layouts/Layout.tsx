@@ -5,7 +5,7 @@ import Head from "next/head";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <>
+    <div className="flex">
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>starrk.dev</title>
@@ -13,6 +13,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <Navbar />
       <div>{children}</div>
       <Footer />
-    </>
+    </div>
   );
 }

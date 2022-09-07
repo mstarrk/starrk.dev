@@ -2,13 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  @apply text-base;
+  font-family: "Comfortaa", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: "Comfortaa", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
+
+/* Scrollbar */
+body::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+body::-webkit-track {
+  background: black;
+}
+
+body::-webkit-scrollbar-thumb {
+  @apply bg-green-400;
+}
+/* -- */
+
+/* NavbarIcon */
+@layer components {
+  .navbar-icon {
+    @apply relative flex items-center justify-center rounded-xl h-12 w-12 mt-2 mb-2 mx-auto bg-gray-800 text-green-400 hover:bg-green-400 hover:text-white;
+  }
+
+  .navbar-tooltip {
+    @apply absolute w-auto p-2 m-2 min-w-max left-14 rounded-md shadow-md text-white bg-gray-900 text-xs font-bold transition-all duration-100 scale-0 origin-left;
+  }
+}
+/* -- */
 
 a {
   color: inherit;
