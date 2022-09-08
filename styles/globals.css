@@ -24,24 +24,49 @@ body::-webkit-track {
 }
 
 body::-webkit-scrollbar-thumb {
-  @apply bg-green-400;
+  @apply dark:bg-emerald-500 bg-slate-700;
 }
 /* -- */
 
-/* NavbarIcon */
 @layer components {
   .content-container {
     @apply flex justify-center items-center flex-col min-h-screen max-h-fit;
   }
+
+  /* NavbarIcon */
+  .logo {
+    @apply active:rotate-90 duration-100;
+  }
+
   .navbar-icon {
-    @apply relative flex items-center justify-center rounded-xl h-12 w-12 mt-2 mb-2 mx-auto bg-gray-800 text-green-400 hover:bg-green-400 hover:text-white;
+    @apply shadow-2xl active:rotate-12 relative animate-stretch duration-500 flex items-center justify-center rounded-xl h-12 w-12 mt-2 mb-2 mx-auto bg-gray-800 text-emerald-300;
+  }
+
+  .navbar-icon:hover {
+    @apply border-white border rounded-2xl animate-stretch text-white bg-green-400;
+  }
+
+  .nav-buttons {
+    @apply flex-grow flex md:flex-col mr-2 ml-2 md:justify-center justify-around space-x-1;
   }
 
   .navbar-tooltip {
-    @apply absolute w-auto p-2 m-2 min-w-max left-14 rounded-md shadow-md text-white bg-gray-900 text-xs font-bold transition-all duration-100 scale-0 origin-left;
+    @apply shadow-2xl border border-white absolute w-auto p-2 m-2 min-w-max left-14 rounded-md text-white bg-gray-900 text-xs font-bold transition-all duration-100 scale-0 origin-left;
+  }
+  /* -- */
+
+  .navbar {
+    @apply animate-stretch shadow-inner duration-500 md:-translate-x-3/4 dark:bg-gray-800 bg-emerald-300 rounded-r-lg border border-l-0 border-slate-600;
+  }
+
+  .current-route {
+    @apply bg-orange-400;
+  }
+
+  .navbar:hover {
+    @apply md:translate-x-0;
   }
 }
-/* -- */
 
 a {
   color: inherit;

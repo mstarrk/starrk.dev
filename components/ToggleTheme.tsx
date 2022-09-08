@@ -1,5 +1,5 @@
 import NavbarButton from "./NavbarButton";
-import { BsSun, BsMoon } from "react-icons/bs";
+import { BsSunFill, BsSunglasses } from "react-icons/bs";
 
 import { useTheme } from "next-themes";
 import { useState, useEffect } from "react";
@@ -15,9 +15,13 @@ export default function ToggleTheme() {
   return (
     <NavbarButton
       icon={
-        resolvedTheme === "dark" ? <BsSun size={28} /> : <BsMoon size={28} />
+        resolvedTheme === "dark" ? (
+          <BsSunFill size={28} />
+        ) : (
+          <BsSunglasses size={28} />
+        )
       }
-      text={resolvedTheme === "dark" ? "Light? 💡" : "Dark? 🌑"}
+      text={resolvedTheme === "dark" ? "Light? 🌇" : "Dark? 🌆"}
       onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
     />
   );
