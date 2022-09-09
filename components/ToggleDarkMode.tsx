@@ -4,7 +4,7 @@ import { BsSunFill, BsSunglasses } from "react-icons/bs";
 import { useTheme } from "next-themes";
 import { useState, useEffect } from "react";
 
-export default function ToggleTheme() {
+export default function ToggleDarkMode() {
   const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 

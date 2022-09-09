@@ -13,12 +13,16 @@ export default function NavbarButton({
 }) {
   return (
     <button
-      className={"navbar-icon group" + (isCurrentRoute ? " current-route" : "")}
+      className={
+        "navbar-button group" + (isCurrentRoute ? " current-route" : "")
+      }
       onClick={onClick}
     >
       {icon}
       {text ? (
-        <span className="navbar-tooltip md:group-hover:scale-100">{text}</span>
+        <span className="navbar-button-tooltip md:group-hover:scale-100">
+          {text}
+        </span>
       ) : null}
     </button>
   );

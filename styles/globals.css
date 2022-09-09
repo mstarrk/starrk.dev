@@ -14,57 +14,157 @@ body {
   margin: 0;
 }
 
-/* Scrollbar */
-body::-webkit-scrollbar {
-  width: 0.5rem;
-}
+@layer base {
+  :root {
+    /* Scheme */
+    --primary: #ffffff;
+    --secondary: #ffffff;
+    --hover: #ffffff;
+    --focus: #ffffff;
+    --light: #ffffff;
+    --dark: #ffffff;
+    --grey: #ffffff;
+  }
 
-body::-webkit-track {
-  background: black;
-}
+  .theme-emerald {
+    /* Scheme */
+    --primary: rgb(110, 231, 183);
+    --secondary: rgb(51 65 85);
+    --hover: rgb(74, 222, 118);
+    --focus: rgb(251, 146, 60);
+    --light: rgb(255, 255, 255);
+    --dark: rgb(0, 0, 0);
+    --grey: rgb(31, 41, 55);
+  }
 
-body::-webkit-scrollbar-thumb {
-  @apply dark:bg-emerald-500 bg-slate-700;
+  .theme-diorama {
+    --primary: rgb(161, 208, 164);
+    --secondary: rgb(219, 6, 90);
+    --hover: rgb(232, 75, 128);
+    --focus: rgb(165, 205, 73);
+    --light: rgb(253, 249, 214);
+    --dark: rgb(0, 0, 0);
+    --grey: rgb(73, 74, 58);
+  }
 }
-/* -- */
 
 @layer components {
+  body {
+    /* Font color */
+    @apply dark:text-light text-dark !important;
+    /* Background color*/
+    @apply dark:bg-grey bg-primary !important;
+
+    @apply transition-all duration-1000;
+  }
+
+  /* Scrollbar */
+  body::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+
+  body::-webkit-track {
+    @apply bg-black;
+  }
+
+  body::-webkit-scrollbar-thumb {
+    @apply dark:bg-primary bg-secondary;
+  }
+
   .content-container {
     @apply flex justify-center items-center flex-col min-h-screen max-h-fit;
   }
 
-  /* NavbarIcon */
+  .navbar {
+    /* Animation */
+    @apply animate-stretch duration-500;
+    /* Styling */
+    @apply shadow-inner rounded-r-lg border border-l-0;
+    /* Hide/show on hover */
+    /* Theming */
+    @apply dark:bg-grey bg-primary border-grey;
+  }
+
+  /* NavbarButtons */
+
   .logo {
+    /* Animation */
     @apply active:rotate-90 duration-100;
   }
 
-  .navbar-icon {
-    @apply shadow-2xl active:rotate-12 relative animate-stretch duration-500 flex items-center justify-center rounded-xl h-12 w-12 mt-2 mb-2 mx-auto bg-gray-800 text-emerald-300;
+  .navbar-button {
+    /* Animation */
+    @apply active:rotate-12 animate-stretch duration-500;
+
+    /* Position, alignment, flex props, etc. */
+    @apply relative flex items-center justify-center mt-2 mb-2 mx-auto;
+
+    /* Styling */
+    @apply shadow-2xl rounded-xl h-12 w-12;
+
+    /* Theming */
+    @apply text-primary bg-grey dark:text-grey dark:bg-primary;
   }
 
-  .navbar-icon:hover {
-    @apply border-white border rounded-2xl animate-stretch text-white bg-green-400;
+  .navbar-button:hover {
+    /* Animation */
+    @apply animate-stretch;
+    /* Styling */
+    @apply border rounded-2xl;
+    /* Theming */
+    @apply text-light bg-hover border-light;
+  }
+
+  .navbar-button-tooltip {
+    /* Animation */
+    @apply transition-all duration-100 scale-0 origin-left;
+    /* Position, alignment, flex props, etc. */
+    @apply absolute w-auto p-2 m-2 min-w-max left-14;
+    /* Styling */
+    @apply shadow-2xl border rounded-md text-xs font-bold;
+    /* Theming */
+    @apply bg-dark text-light border-light;
   }
 
   .nav-buttons {
     @apply flex-grow flex md:flex-col mr-2 ml-2 md:justify-center justify-around space-x-1;
   }
 
-  .navbar-tooltip {
-    @apply shadow-2xl border border-white absolute w-auto p-2 m-2 min-w-max left-14 rounded-md text-white bg-gray-900 text-xs font-bold transition-all duration-100 scale-0 origin-left;
-  }
-  /* -- */
-
-  .navbar {
-    @apply animate-stretch shadow-inner duration-500 md:-translate-x-3/4 dark:bg-gray-800 bg-emerald-300 rounded-r-lg border border-l-0 border-slate-600;
-  }
-
   .current-route {
-    @apply bg-orange-400;
+    /* Theming */
+    @apply bg-focus dark:bg-focus text-light border-light border;
   }
 
-  .navbar:hover {
-    @apply md:translate-x-0;
+  .settings-modal {
+    @apply md:w-64 md:h-32 w-32 h-24;
+    @apply fixed md:bottom-7 md:top-auto md:left-20 right-3 top-96;
+    @apply border rounded-2xl text-center p-4;
+    @apply text-primary bg-grey dark:text-grey dark:bg-primary;
+  }
+
+  .theme-button {
+    @apply mr-2 bg-primary dark:bg-secondary border border-white rounded-full w-6 h-6 dark:hover:bg-primary hover:bg-secondary;
+  }
+
+  /* width */
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    @apply rounded-md;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    @apply bg-secondary;
+    @apply rounded-xl;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-focus;
   }
 }
 
