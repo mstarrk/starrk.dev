@@ -1,6 +1,6 @@
 /*
   Credits to https://github.com/craftzdog
-  Src: https://github.com/craftzdog/craftzdog-homepage/blob/master/components/voxel-dog.js
+  Src: https://github.com/  /craftzdog-homepage/blob/master/components/voxel-dog.js
 
   Thanks! ✌️
 */
@@ -15,7 +15,7 @@ function easeOutCirc(x: number) {
   return Math.sqrt(1 - Math.pow(x - 1, 4));
 }
 
-export default function Plant() {
+const Plant = () => {
   const refContainer = useRef() as React.MutableRefObject<HTMLInputElement>;
   const [loading, setLoading] = useState(true);
   const refRenderer = useRef() as any;
@@ -104,12 +104,12 @@ export default function Plant() {
         }
 
         renderer.render(scene, camera);
+      };
 
-        return () => {
-          cancelAnimationFrame(req);
-          renderer.domElement.remove();
-          renderer.dispose();
-        };
+      return () => {
+        cancelAnimationFrame(req);
+        renderer.domElement.remove();
+        renderer.dispose();
       };
     }
   }, []);
@@ -119,11 +119,13 @@ export default function Plant() {
     return () => {
       window.removeEventListener("resize", handleWindowResize, false);
     };
-  });
+  }, [handleWindowResize]);
 
   return (
     <div ref={refContainer} className="3d-plant w-64 h-64 relative">
       {loading && <div>{"It's loading"}</div>}
     </div>
   );
-}
+};
+
+export default Plant;
