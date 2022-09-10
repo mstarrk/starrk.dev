@@ -1,6 +1,6 @@
 /*
   Credits to https://github.com/craftzdog
-  Src: https://github.com/  /craftzdog-homepage/blob/master/components/voxel-dog.js
+  Src: https://github.com/craftzdog/craftzdog-homepage/blob/master/components/voxel-dog.js
 
   Thanks! ✌️
 */
