@@ -1,4 +1,13 @@
-// Example route/component
+import Plant from "../components/Plant";
+import NoSSR from "../components/NoSSR";
+
 export default function About() {
-  return <h1>About</h1>;
+  return (
+    <>
+      <div>Form goes here</div>
+      <NoSSR>
+        <Plant />
+      </NoSSR>
+    </>
+  );
 }
